@@ -1,0 +1,13 @@
+\c url_shortener_cory_leistikow;
+CREATE TABLE urls (id SERIAL PRIMARY KEY, original_url VARCHAR(255) NOT NULL , count INTEGER DEFAULT 0);
+INSERT INTO urls (original_url, count) VALUES ('http://www.google.com', 1);
+INSERT INTO urls (original_url, count) VALUES ('http://www.yahoo.com', 4);
+INSERT INTO urls (original_url, count) VALUES ('http://www.bluevajra.com', 3);
+INSERT INTO urls (original_url, count) VALUES ('http://www.github.com', 3);
+INSERT INTO urls (original_url, count) VALUES ('http://www.gopivotal.com', 2);
+SELECT * FROM urls;
+SELECT original_url FROM urls;
+SELECT * FROM urls where id = 4;
+SELECT * FROM urls where original_url = 'http://www.bluevajra.com';
+UPDATE urls SET count = 4 where id =4;
+DELETE FROM urls WHERE original_url = 'http://www.google.com';
